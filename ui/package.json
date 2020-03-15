@@ -12,8 +12,9 @@
     "express": "^4.17.1",
     "next": "9.2.2",
     "react": "16.13.0",
+    "react-circular-progressbar": "^2.0.3",
     "react-dom": "16.13.0",
-    "react-websocket": "^2.1.0"
+    "websocket": "^1.0.31"
   },
   "devDependencies": {
     "postcss-preset-env": "^6.7.0",

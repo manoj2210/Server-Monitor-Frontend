@@ -15,7 +15,7 @@ export default class Card extends Component {
                         </div> 
                         <div class="flex-1 text-right md:text-center">
                             <h5 class="font-bold uppercase text-gray-400">{this.props.title}</h5>
-                            <h3 class="font-bold text-3xl text-gray-600">{this.props.data} <span class="text-green-500"><i
+                            <h3 class="font-medium text-2xl text-gray-600">{this.props.data} <span class="text-green-500"><i
                                 class="fas fa-caret-up"></i></span></h3>
                         </div>
                     </div>
