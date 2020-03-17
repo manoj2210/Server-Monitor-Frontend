@@ -9,7 +9,6 @@ export default class Table extends Component {
     render() {
         let records;
         if (this.props.data.data) {
-            console.log(this.props.data.data);
             let m = this.props.data.data;
             records = m.map((d, index) => (
                 <tr>
