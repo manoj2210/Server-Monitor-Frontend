@@ -18,12 +18,19 @@ function Header() {
                                 >Home</a
                                 >
                             </Link>
+                            <Link href="/hardware">
+                                <a
+                                    className="ml-8 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-900 text-gray-100 hover:bg-gray-800 focus:outline-none focus:bg-gray-400"
+                                >Hardware</a
+                                >
+                            </Link>
                             <Link href="/cpu">
                                 <a
                                     className="ml-8 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-900 text-gray-100 hover:bg-gray-800 focus:outline-none focus:bg-gray-400"
                                 >CPU</a
                                 >
                             </Link>
+                            
                             <Link href="/network">
                                 <a
                                     className="ml-8 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-900 text-gray-100 hover:bg-gray-800 focus:outline-none focus:bg-gray-400"

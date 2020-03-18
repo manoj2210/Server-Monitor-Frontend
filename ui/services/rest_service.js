@@ -28,7 +28,7 @@ export const post = (url, data) => {
 };
 
 export const get = (url) => {
-  return fetch('url', {
+  return fetch(url, {
     method: 'get'
   })
     .then(response => {

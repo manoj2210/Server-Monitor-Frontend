@@ -22,7 +22,7 @@ export default class Table extends Component {
                         <p className="text-gray-400 whitespace-no-wrap">{d.state}</p>
                     </td>
                     <td className="px-5 py-5 border-b border-gray-200 bg-gray-700 text-sm">
-                        <p className="text-gray-400 whitespace-no-wrap">{d.tmu}</p>
+                        <p className="text-gray-400 whitespace-no-wrap">{d.tmu/1000}MB</p>
                     </td>
                     <td className="px-5 py-5 border-b border-gray-200 bg-gray-700 text-sm">
                         <p className="text-gray-400 whitespace-no-wrap">{d.cpu}%</p>
