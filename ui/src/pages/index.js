@@ -23,7 +23,7 @@ export default class Home extends Component {
             kernelSpaceTime: ' ',
             idleTime: ' '
         };
-        this.client = new W3CWebSocket('ws://127.0.0.1:8080/home');
+        this.client = new W3CWebSocket('ws://ec2-3-83-222-115.compute-1.amazonaws.com/home');
     }
     componentDidMount() {
         this.client.onopen = () => {

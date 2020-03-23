@@ -9,7 +9,7 @@ export default class CPU extends Component {
         this.state = {
             data: []
         }
-        this.client = new W3CWebSocket('ws://127.0.0.1:8080/process');
+        this.client = new W3CWebSocket('ws://ec2-3-83-222-115.compute-1.amazonaws.com/process');
     }
     componentDidMount() {
         this.client.onopen = () => {

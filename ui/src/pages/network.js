@@ -15,7 +15,7 @@ export default class Network extends Component {
         this.handleHardwareInfo();
     }
     handleHardwareInfo = e => {
-        get("http://127.0.0.1:8080/network").then(async (m) => {
+        get("http://ec2-3-83-222-115.compute-1.amazonaws.com/network").then(async (m) => {
             if (m != "ERR") {
                 this.setState({ conn: m.conn, rout: m.route_table, actconn: m.active_conn, noofcon: m.no_of_conn,arr:m.arr });
             }

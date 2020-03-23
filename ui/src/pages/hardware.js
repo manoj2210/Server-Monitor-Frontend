@@ -38,7 +38,7 @@ export default class Hardware extends Component {
     }
 
     handleHardwareInfo = e => {
-        get("http://127.0.0.1:8080/hardware").then(m => {
+        get("http://ec2-3-83-222-115.compute-1.amazonaws.com/hardware").then(m => {
             if (m != "ERR") {
                 this.setState({ cpu: m.cpu, network: m.network, os: m.os, ram: m.ram });
                 // console.log(m.network.data);
