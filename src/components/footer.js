@@ -9,19 +9,19 @@ function Footer() {
                 </li>
 
                 <li>
-                    <ul class="list-reset items-center text-sm pt-3">
-                    <div class="flex relative inline-block float-right">
+                    <ul className="list-reset items-center text-sm pt-3">
+                    <div className="flex relative inline-block float-right">
                         <div className="ml-10 relative flex items-baseline">
                         <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline p-5 py-1"
+                            <a className="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline p-5 py-1"
                                 href="#">Github</a>
                         </li>
                         <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline p-5 py-1"
+                            <a className="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline p-5 py-1"
                                 href="#">Linkedin</a>
                         </li>
                         <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline p-5 py-1"
+                            <a className="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline p-5 py-1"
                                 href="#">Twitter</a>
                         </li>
                         </div>

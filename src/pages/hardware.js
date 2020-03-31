@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 import Card from "../resources/card"
 import { Component } from "react";
 import { get } from "../../services/rest_service"
-
+const BackendUrl = process.env.backendurl;
 export default class Hardware extends Component {
     constructor(props) {
         super(props);
@@ -38,7 +38,7 @@ export default class Hardware extends Component {
     }
 
     handleHardwareInfo = e => {
-        get("http://ec2-3-83-222-115.compute-1.amazonaws.com/hardware").then(m => {
+        get(`http://${BackendUrl}/hardware`).then(m => {
             if (m != "ERR") {
                 this.setState({ cpu: m.cpu, network: m.network, os: m.os, ram: m.ram });
                 // console.log(m.network.data);
@@ -50,35 +50,35 @@ export default class Hardware extends Component {
     render() {
         let output = this.state.network.data.map((data, index) => (
 
-            <div class="flex flex-wrap">
+            <div className="flex flex-wrap">
                 <Card title="Name" data={data.name} />
                 <Card title="MTU" data={data.mtu} />
                 <Card title="MAC Address " data={data.mac_address} />
-                <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
             </div>
 
         ))
         return (
             <Layout>
-                <div class="container w-full mx-auto pt-20">
-                    <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
-                        <div class="border-b border-gray-800 my-3 py-3">
-                            <h5 class="font-bold uppercase text-gray-600">RAM Information</h5>
+                <div className="container w-full mx-auto pt-20">
+                    <div className="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+                        <div className="border-b border-gray-800 my-3 py-3">
+                            <h5 className="font-bold uppercase text-gray-600">RAM Information</h5>
                         </div>
-                        <div class="flex flex-wrap">
+                        <div className="flex flex-wrap">
                             <Card title="Main Memory" data={String((this.state.ram.main_memory / 1000).toFixed(2)) + " GB"} />
                             <Card title="Swap Memory" data={String((this.state.ram.swap_memory / 1000).toFixed(2)) + " GB"} />
                         </div>
-                        <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
-                        <div class="border-b border-gray-800 my-3 py-3">
-                            <h5 class="font-bold uppercase text-gray-600">Network Information</h5>
+                        <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                        <div className="border-b border-gray-800 my-3 py-3">
+                            <h5 className="font-bold uppercase text-gray-600">Network Information</h5>
                         </div>
                         {output}
-                        <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
-                        <div class="border-b border-gray-800 my-3 py-3">
-                            <h5 class="font-bold uppercase text-gray-600">CPU Information</h5>
+                        <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                        <div className="border-b border-gray-800 my-3 py-3">
+                            <h5 className="font-bold uppercase text-gray-600">CPU Information</h5>
                         </div>
-                        <div class="flex flex-wrap">
+                        <div className="flex flex-wrap">
                             <Card title="Architecture" data={this.state.cpu.architecture} />
                             <Card title="CPU Modes" data={this.state.cpu.cpu_modes} />
                             <Card title="Number of CPUs" data={this.state.cpu.no_of_cpus} />
@@ -91,19 +91,19 @@ export default class Hardware extends Component {
                             <Card title="L2 Cache" data={this.state.cpu.l2} />
                             <Card title="L3 Cache" data={this.state.cpu.l3} />
                         </div>
-                        <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                        <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
 
 
-                        <div class="border-b border-gray-800 my-3 py-3">
-                            <h5 class="font-bold uppercase text-gray-600">Operating System Information</h5>
+                        <div className="border-b border-gray-800 my-3 py-3">
+                            <h5 className="font-bold uppercase text-gray-600">Operating System Information</h5>
                         </div>
-                        <div class="flex flex-wrap">
+                        <div className="flex flex-wrap">
                             <Card title="Kernel Name" data={this.state.os.kernel_name} />
                             <Card title="Hostname" data={this.state.os.host_name} />
                             <Card title="Kernel Version" data={this.state.os.kernel_version} />
                             <Card title="Operating System " data={this.state.os.os} />
                         </div>
-                        <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                        <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
 
                     </div>
                 </div>

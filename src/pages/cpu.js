@@ -2,6 +2,7 @@ import { Component } from "react";
 import Table from '../resources/table'
 import Layout from '../components/layout'
 import { w3cwebsocket as W3CWebSocket } from "websocket";
+const BackendUrl = process.env.backendurl;
 
 export default class CPU extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ export default class CPU extends Component {
         this.state = {
             data: []
         }
-        this.client = new W3CWebSocket('ws://ec2-3-83-222-115.compute-1.amazonaws.com/process');
+        this.client = new W3CWebSocket(`ws://${BackendUrl}/process`);
     }
     componentDidMount() {
         this.client.onopen = () => {

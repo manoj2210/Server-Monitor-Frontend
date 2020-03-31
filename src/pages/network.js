@@ -2,6 +2,7 @@ import { Component } from "react";
 import Layout from "../components/layout"
 import { get } from "../../services/rest_service"
 import Card from "../resources/card"
+const BackendUrl = process.env.backendurl;
 export default class Network extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +16,7 @@ export default class Network extends Component {
         this.handleHardwareInfo();
     }
     handleHardwareInfo = e => {
-        get("http://ec2-3-83-222-115.compute-1.amazonaws.com/network").then(async (m) => {
+        get(`http://${BackendUrl}/network`).then(async (m) => {
             if (m != "ERR") {
                 this.setState({ conn: m.conn, rout: m.route_table, actconn: m.active_conn, noofcon: m.no_of_conn,arr:m.arr });
             }
@@ -100,15 +101,15 @@ export default class Network extends Component {
         }
         return (
             <Layout>
-                <div class="container w-full mx-auto pt-20">
+                <div className="container w-full mx-auto pt-20">
                     <div className="mx-auto px-4 sm:px-8">
                         <div className="m-10 flex flex-wrap justify-center">
                             
                             <Card title="Number of Hits" data={this.state.noofcon}></Card>
                         </div>
                         <div className="mx-auto px-4 sm:px-8">
-                            <div class="border-b border-gray-800 my-3 py-3">
-                                <h5 class="font-bold uppercase text-gray-500">Active Connections</h5>
+                            <div className="border-b border-gray-800 my-3 py-3">
+                                <h5 className="font-bold uppercase text-gray-500">Active Connections</h5>
                             </div>
                             <div className="m-5">
                                 <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -173,10 +174,10 @@ export default class Network extends Component {
                                 </div>
                             </div>
                         </div>
-                        <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                        <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
                         <div className="mx-auto px-4 sm:px-8">
-                            <div class="border-b border-gray-800 my-3 py-3">
-                                <h5 class="font-bold uppercase text-gray-500">Routing table</h5>
+                            <div className="border-b border-gray-800 my-3 py-3">
+                                <h5 className="font-bold uppercase text-gray-500">Routing table</h5>
                             </div>
                             <div className="m-5">
                                 <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -220,9 +221,9 @@ export default class Network extends Component {
                                 </div>
                             </div>
                         </div>
-                        <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
-                        <div class="border-b border-gray-800 my-3 py-3">
-                            <h5 class="font-bold uppercase text-gray-500">Connections</h5>
+                        <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                        <div className="border-b border-gray-800 my-3 py-3">
+                            <h5 className="font-bold uppercase text-gray-500">Connections</h5>
                         </div>
                         <div className="m-5">
                             <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -267,7 +268,7 @@ export default class Network extends Component {
                         </div>
                     </div>
 
-                    <hr class="border-b-2 border-gray-600 my-8 mx-4"></hr>
+                    <hr className="border-b-2 border-gray-600 my-8 mx-4"></hr>
                 </div>
             </Layout>
         )

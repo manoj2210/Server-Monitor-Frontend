@@ -33,8 +33,8 @@ export default class Progress extends Component {
                 }}
             >
                 <div >
-                    <strong class="font-medium uppercase text-white text-4xl">{this.props.percentage}%</strong>
-                    {/* <p class="font-medium uppercase text-red-500 text-2xl">11GB/20GB</p> */}
+                    <strong className="font-medium uppercase text-white text-4xl">{this.props.percentage}%</strong>
+                    {/* <p className="font-medium uppercase text-red-500 text-2xl">11GB/20GB</p> */}
                     {this.props.content}
                 </div>
             </CircularProgressbarWithChildren>
